@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cricket</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="./main.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bat-info-container">
+        <div class="batter">
+          <span id="striker"></span><span id="strikerRun">0</span>
+        </div>
+        <br />
+        <div class="batter">
+          <span id="nonStriker"></span><span id="nonStrikerRun">0</span>
+        </div>
+      </div>
+      <div class="match-info-container">
+        <div>
+          <span class="current-match" id="currentMatch"></span>
+          <span id="runs">56 - 1</span>
+        </div>
+        <div>Overs <span id="overs">6.3</span></div>
+      </div>
+      <div class="recent-run-updates">
+        <div class="ball is-cleared">0</div>
+        <div class="ball">0</div>
+        <div class="ball">0</div>
+        <div class="ball">0</div>
+        <div class="ball">0</div>
+        <div class="ball">0</div>
+      </div>
+    </div>
+
+    <div class="updates-container" id="updates"></div>
+  </body>
+</html>
