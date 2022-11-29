@@ -1,109 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 body {
-  background-image: url("./cricket.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 0;
-  margin: 0;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: url("bg.jpg");
+  background-color: rgba(15, 15, 15, 0.5) !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  background-blend-mode: multiply;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 !important;
+}
+
+.container-fluid {
   min-height: 100vh;
 }
 
-.container {
-  position: fixed;
-  bottom: 8%;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60%;
-  background-color: rgba(0, 0, 0, 0.1);
-  height: 10vh;
-  border-radius: 20px;
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 1em;
+.scoreboard-col {
   display: flex;
-  flex-grow: 1;
-  gap: 2em;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
+  gap: 24px;
 }
 
-.bat-info-container {
-  flex: 0.6;
+.athlesia-logo {
+  max-width: 60% !important;
 }
 
-.batter {
-  display: flex;
-  justify-content: space-between;
-  font-weight: 800;
-  font-size: 1.4rem;
+.team-banner {
+  text-align: center;
+  width: 252px;
+  height: 252px;
+}
+.team-banner img {
+  height: 100%;
 }
 
-.match-info-container {
+.score-wrapper {
+  padding: 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: white;
-  color: black;
-  border-radius: 1em;
-  flex: 1;
-  overflow: hidden;
+  align-items: center;
+  background: linear-gradient(180deg, #0057a7 0%, #021d4c 100%);
+  border-radius: 24px;
+  gap: 16px;
 }
-.match-info-container div:first-child {
-  padding: 0.6em;
-  font-size: 1.2rem;
-  font-weight: 600;
+.score-wrapper .team-score-row {
+  padding: 16px 32px;
   display: flex;
-  gap: 1em;
   justify-content: center;
-  background-color: #ee5252;
-  color: white;
-}
-
-.match-info-container div:nth-child(2) {
-  background-color: rgb(45, 60, 221);
-  padding: 0.4em;
-  color: white;
+  align-items: center;
   text-align: center;
-  font-size: 1.2rem;
+  gap: 40px;
+  font-weight: 700;
+  background: #f8df00;
+  border-radius: 100px;
+  height: 100%;
 }
-
-.recent-run-updates {
+.score-wrapper .team-score-row .divider {
+  min-height: 100%;
+  width: 2px;
+  background: linear-gradient(180deg, rgba(1, 56, 118, 0) 0.47%, #013876 44.77%, rgba(1, 56, 119, 0) 89.68%);
+}
+.score-wrapper .innings {
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background-color: #00b13c;
+  width: 90%;
+  border-radius: 50px;
+  height: 40px;
+  color: white;
+  padding-inline: 40px;
+}
+.score-wrapper .innings div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(180deg, #024383 0%, #004F9D 100%); */
+  background: linear-gradient(180deg, #014588 0%, #014487 0%);
+  /* position: absolute; */
+  left: 40px;
+  bottom: -0.9rem;
+  border-radius: 35px;
+}
+.score-wrapper .innings h2 {
+  margin: 0;
+  font-size: 24px;
+}
+.score-wrapper .innings img {
+  height: 70px;
+  width: 75%;
+}
+.score-wrapper .player-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #024383 0%, #004f9d 100%);
+  width: 80%;
+  border-radius: 10px;
+  gap: 1rem;
+  padding: 1rem 2rem;
+}
+.score-wrapper .player-wrapper .player {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: white;
+  margin: 0;
+}
+.score-wrapper .player-wrapper .player .player-name {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.8);
+}
+.score-wrapper .player-wrapper .player .player-score {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+.score-wrapper .player-wrapper .player .player-score h3 {
+  font-size: 24px;
+}
+.score-wrapper .below_overs {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  background: linear-gradient(180deg, #023470 0%, #004f9d 100%);
+  border-radius: 0px 0px 24px 24px;
+  padding: 0rem 1rem 1rem 1rem;
+  gap: 16px;
+}
+.score-wrapper .below_overs .bowler_name {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+.score-wrapper .below_overs .bowler_name h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  color: white;
+}
+.score-wrapper .below_overs .bowler_name h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+}
+.score-wrapper .below_overs .over_tracking {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.score-wrapper .below_overs .over_tracking h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: white;
+}
+.score-wrapper .below_overs .balls {
+  display: flex;
+  justify-content: flex-start;
   gap: 1em;
 }
-
-.ball {
-  outline: 2px solid white;
-  color: white;
-  width: 1.5em;
-  height: 1.5em;
-  display: grid;
-  place-items: center;
-  border-radius: 1em;
-  font-weight: bold;
-  transition: background-color 350ms ease-out, color 450ms ease-out;
-}
-.ball.is-cleared {
+.score-wrapper .below_overs .balls .whiteCircle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
   background-color: white;
-  color: black;
+  height: 50px;
+  width: 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: 700;
 }
-
-.updates-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100vw;
-  font-size: clamp(2rem, 10vw, 9rem);
-  display: grid;
-  place-items: center;
-  background-color: rgba(0, 0, 0, 0.4);
-  color: white;
-  pointer-events: none;
-  transition: opacity 350ms ease-out;
-  opacity: 0;
-}
-.updates-container.show {
-  opacity: 1;
-}
+.score-wrapper .below_overs .balls .whiteCircle.wicket {
+  background-color: #ef5655;
+}/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  background: url("bg.jpg");
+  background-color: rgba(15, 15, 15, 0.5) !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  min-height: 100vh;
+  background-blend-mode: multiply;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 !important;
+}
+
+.container-fluid {
+  min-height: 100vh;
+}
+
+.scoreboard-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.athlesia-logo {
+  max-width: 60% !important;
+}
+
+.team-banner {
+  text-align: center;
+  width: 252px;
+  height: 252px;
+
+  img {
+    height: 100%;
+  }
+}
+.score-wrapper {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(180deg, #0057a7 0%, #021d4c 100%);
+  border-radius: 24px;
+  gap: 16px;
+  .team-score-row {
+    padding: 16px 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    font-weight: 700;
+    background: #f8df00;
+    border-radius: 100px;
+    height: 100%;
+    .divider {
+      min-height: 100%;
+      width: 2px;
+      background: linear-gradient(
+        180deg,
+        rgba(1, 56, 118, 0) 0.47%,
+        #013876 44.77%,
+        rgba(1, 56, 119, 0) 89.68%
+      );
+    }
+  }
+  .innings {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: #00b13c;
+    width: 90%;
+    border-radius: 50px;
+    height: 40px;
+    color: white;
+    padding-inline: 40px;
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      /* background: linear-gradient(180deg, #024383 0%, #004F9D 100%); */
+      background: linear-gradient(180deg, #014588 0%, #014487 0%);
+      /* position: absolute; */
+      left: 40px;
+      bottom: -0.9rem;
+      border-radius: 35px;
+    }
+    h2 {
+      margin: 0;
+      font-size: 24px;
+    }
+    img {
+      height: 70px;
+      width: 75%;
+    }
+  }
+  .player-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #024383 0%, #004f9d 100%);
+    width: 80%;
+    border-radius: 10px;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    .player {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      color: white;
+      margin: 0;
+      .player-name {
+        font-size: 24px;
+        color: rgba(255, 255, 255, 0.8);
+      }
+      .player-score {
+        display: flex;
+        align-items: flex-end;
+        gap: 0.5rem;
+        h3 {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  .below_overs {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    background: linear-gradient(180deg, #023470 0%, #004f9d 100%);
+    border-radius: 0px 0px 24px 24px;
+    padding: 0rem 1rem 1rem 1rem;
+    gap: 16px;
+    .bowler_name {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      h1 {
+        font-weight: 700;
+        font-size: 1.8rem;
+        color: white;
+      }
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: white;
+      }
+    }
+    .over_tracking {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      h2 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: white;
+      }
+    }
+    .balls {
+      display: flex;
+      justify-content: flex-start;
+      gap: 1em;
+      .whiteCircle {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        background-color: white;
+        height: 50px;
+        width: 50px;
+        border-radius: 30px;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 700;
+        &.wicket {
+          background-color: #ef5655;
+        }
+      }
+    }
+  }
+}
