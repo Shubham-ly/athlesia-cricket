@@ -99,23 +99,6 @@ onValue(ref(db, "cricket_update/current_game"), (snapshot) => {
         nonStrikerRunElement.innerHTML = snap.val()?.runs || 0;
       }
     );
-
-    // if (gameData[gameData.batting_team + "_updates"]) {
-    //   const strikerRun =
-    //     gameData[gameData.batting_team + "_updates"][gameData.striker]?.run ||
-    //     0;
-    //   strikerRunElement.innerHTML = strikerRun;
-    // } else {
-    //   strikerRunElement.innerHTML = 0;
-    // }
-    // if (gameData[gameData.batting_team + "_updates"]) {
-    //   const nonStrikerRun =
-    //     gameData[gameData.batting_team + "_updates"][gameData["non-striker"]]
-    //       ?.run || 0;
-    //   nonStrikerRunElement.innerHTML = nonStrikerRun;
-    // } else {
-    //   nonStrikerRunElement.innerHTML = 0;
-    // }
   });
 });
 onValue(ref(db, "cricket_update/update"), (data) => {
