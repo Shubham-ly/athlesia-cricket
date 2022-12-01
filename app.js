@@ -30,7 +30,6 @@ onValue(ref(db, "cricket_update/current_game"), (snapshot) => {
   const currentGame = snapshot.val();
   onValue(ref(db, `cricket/${currentGame}`), (data) => {
     const gameData = data.val();
-    console.log(gameData);
     overContainerElement.innerHTML = "";
 
     const teamAImageSrc = `${gameData[gameData.batting_team]}.png`;
@@ -73,21 +72,25 @@ onValue(ref(db, "cricket_update/current_game"), (snapshot) => {
       gameData[`${gameData.balling_team}_runs`] + 1;
 
     const overs = gameData[`${gameData.batting_team}_over`];
-    overs[overs.length - 1]?.forEach((ball) => {
+    overs[overs.length - 1]?.forEach((ball, index) => {
       let d = ball.toString();
       let ballElement = null;
-      if (d.length > 1) {
-        console.log("running");
+      if (d.includes("NB")) {
         d = d.replace("+", " ");
         ballElement = createBall(
           `<span>${d[d.length - 1]}</span>
           <span class="belowSpan">${d.slice(0, 2)}</span>`,
           ["whiteCircle"]
         );
+      } else if (d === "WD") {
+        ballElement = createBall(d, ["whiteCircle"]);
       } else {
         ballElement = createBall(d, ["whiteCircle", ball === "W" && "wicket"]);
       }
       ballElement && overContainerElement.appendChild(ballElement);
+      if (overs.length - 1 === 0) {
+        overContainerElement.firstElementChild.style.display = "none";
+      }
     });
 
     onValue(ref(db, `players/${gameData.striker}/${currentGame}`), (snap) => {
@@ -100,13 +103,6 @@ onValue(ref(db, "cricket_update/current_game"), (snapshot) => {
       }
     );
   });
-});
-onValue(ref(db, "cricket_update/update"), (data) => {
-  const d = data.val();
-  if (d == "Wide ball") {
-    console.log("a wide ball");
-    overContainerElement.appendChild(createBall("WD", ["whiteCircle"]));
-  }
 });
 function createBall(data, classes) {
   const ballElement = document.createElement("div");
